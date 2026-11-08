@@ -1,0 +1,684 @@
+/* =====================================================
+   Responsive Design Styles
+   Harvey Yu Personal Website
+   Mobile-First Approach
+   ===================================================== */
+
+/* ===== BASE MOBILE STYLES (320px+) ===== */
+/* Default styles in components.css are mobile-first */
+
+/* ===== SMALL MOBILE ADJUSTMENTS (320px - 480px) ===== */
+
+@media (max-width: 480px) {
+    .hero {
+        padding: var(--space-sm);
+    }
+
+    .hero-content {
+        gap: var(--space-lg);
+    }
+
+    .name {
+        font-size: clamp(2rem, 10vw, 3rem);
+        line-height: 1.1;
+        text-align: center;
+    }
+
+    .title {
+        font-size: clamp(1rem, 4vw, 1.2rem);
+        line-height: 1.4;
+        padding: 0 var(--space-xs);
+    }
+
+    .social-links {
+        flex-direction: column;
+        width: 100%;
+        max-width: 280px;
+        gap: var(--space-sm);
+    }
+
+    .social-link {
+        justify-content: center;
+        padding: var(--space-md) var(--space-lg);
+        width: 100%;
+        min-height: 56px;
+        /* Better touch targets */
+    }
+
+    .professional-summary {
+        padding: 0 var(--space-sm);
+    }
+
+    .summary-text {
+        font-size: 0.75rem;
+        line-height: 1.5;
+    }
+
+    /* Adjust background patterns for mobile */
+    .tech-pattern {
+        background-size: 30px 30px, 20px 20px;
+        opacity: 0.3;
+    }
+
+    .floating-dots::before,
+    .floating-dots::after {
+        display: none;
+        /* Remove floating dots on small screens */
+    }
+
+    /* Experience & Projects Mobile Styles */
+    .experience-section,
+    .projects-section {
+        padding: var(--space-xl) 0;
+    }
+
+    .section-title {
+        font-size: clamp(1.5rem, 8vw, 2rem);
+    }
+
+    .section-subtitle {
+        font-size: clamp(0.9rem, 3vw, 1rem);
+    }
+
+    .experience-item {
+        padding: var(--space-md);
+    }
+
+    .experience-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--space-sm);
+    }
+
+    .experience-meta {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .experience-content {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .company-logo {
+        justify-self: center;
+        margin-bottom: var(--space-sm);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-md);
+    }
+
+    .project-item {
+        margin: 0 var(--space-xs);
+    }
+
+    .project-content {
+        padding: var(--space-md);
+    }
+}
+
+/* ===== LARGE MOBILE / PHABLET (481px - 767px) ===== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+    .hero {
+        padding: var(--space-md);
+    }
+
+    .social-links {
+        flex-direction: row;
+        flex-wrap: wrap;
+        max-width: 400px;
+        gap: var(--space-sm);
+    }
+
+    .social-link {
+        flex: 1;
+        min-width: 140px;
+        justify-content: center;
+    }
+
+    .name {
+        font-size: clamp(2.5rem, 8vw, 3.5rem);
+    }
+
+    .title {
+        font-size: clamp(1.1rem, 4vw, 1.4rem);
+        max-width: 500px;
+    }
+
+    .experience-timeline {
+        gap: var(--space-xl);
+    }
+
+    .experience-content {
+        grid-template-columns: auto 1fr;
+        gap: var(--space-md);
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        gap: var(--space-lg);
+    }
+}
+
+/* ===== TABLET PORTRAIT (768px - 1023px) ===== */
+
+@media (min-width: 768px) and (max-width: 1023px) {
+    .hero {
+        padding: var(--space-lg);
+    }
+
+    .container {
+        max-width: 700px;
+    }
+
+    .hero-content {
+        gap: var(--space-xl);
+    }
+
+    .name {
+        font-size: clamp(3rem, 6vw, 4rem);
+        letter-spacing: -0.015em;
+    }
+
+    .title {
+        font-size: clamp(1.3rem, 3vw, 1.6rem);
+        max-width: 600px;
+    }
+
+    .social-links {
+        gap: var(--space-lg);
+    }
+
+    .social-link {
+        padding: var(--space-md) var(--space-xl);
+        font-size: 1.05rem;
+    }
+
+    .icon {
+        width: 22px;
+        height: 22px;
+    }
+
+    /* Enhanced background effects for tablets */
+    .gradient-mesh {
+        background-size: 120% 120%;
+        animation-duration: 25s;
+    }
+
+    .tech-pattern {
+        background-size: 40px 40px, 25px 25px;
+        opacity: 0.4;
+    }
+
+    .experience-section,
+    .projects-section {
+        padding: var(--space-2xl) 0;
+    }
+
+    .section-header {
+        margin-bottom: var(--space-2xl);
+    }
+
+    .experience-timeline {
+        max-width: 700px;
+    }
+
+    .projects-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--space-lg);
+    }
+}
+
+/* ===== TABLET LANDSCAPE / SMALL DESKTOP (1024px - 1279px) ===== */
+
+@media (min-width: 1024px) and (max-width: 1279px) {
+    .hero {
+        padding: var(--space-xl);
+    }
+
+    .container {
+        max-width: 900px;
+    }
+
+    .hero-content {
+        gap: var(--space-2xl);
+    }
+
+    .name {
+        font-size: clamp(3.5rem, 5vw, 4.2rem);
+        letter-spacing: -0.02em;
+    }
+
+    .title {
+        font-size: clamp(1.4rem, 2.5vw, 1.6rem);
+        max-width: 700px;
+    }
+
+    .social-links {
+        gap: var(--space-xl);
+    }
+
+    .social-link {
+        padding: var(--space-lg) var(--space-2xl);
+        font-size: 1.1rem;
+        border-radius: var(--radius-lg);
+    }
+
+    .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .professional-summary {
+        margin-top: var(--space-md);
+    }
+
+    .summary-text {
+        font-size: 1rem;
+    }
+
+    .experience-item:hover {
+        transform: translateY(-2px);
+    }
+
+    .project-item:hover {
+        transform: translateY(-3px) scale(1.01);
+    }
+
+    .logo-placeholder:hover {
+        transform: scale(1.1);
+    }
+}
+
+/* ===== DESKTOP (1280px - 1439px) ===== */
+
+@media (min-width: 1280px) and (max-width: 1439px) {
+    .hero {
+        padding: var(--space-2xl);
+    }
+
+    .container {
+        max-width: 1100px;
+    }
+
+    .hero-content {
+        gap: var(--space-3xl);
+    }
+
+    .name {
+        font-size: clamp(4rem, 4.5vw, 4.5rem);
+    }
+
+    .title {
+        font-size: clamp(1.5rem, 2vw, 1.7rem);
+        max-width: 800px;
+    }
+
+    .social-links {
+        gap: var(--space-2xl);
+    }
+
+    .social-link {
+        padding: var(--space-xl) var(--space-3xl);
+        font-size: 1.15rem;
+    }
+
+    /* Enhanced effects for desktop */
+    .social-link:hover {
+        transform: translateY(-4px);
+    }
+
+    .name::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: inherit;
+        filter: blur(20px);
+        opacity: 0.3;
+        z-index: -1;
+        animation: textGlow 3s ease-in-out infinite alternate;
+    }
+
+    @keyframes textGlow {
+        from {
+            opacity: 0.2;
+        }
+
+        to {
+            opacity: 0.4;
+        }
+    }
+}
+
+/* ===== LARGE DESKTOP (1440px+) ===== */
+
+@media (min-width: 1440px) {
+    .hero {
+        padding: var(--space-3xl);
+    }
+
+    .container {
+        max-width: var(--container-max-width);
+    }
+
+    .hero-content {
+        gap: 4rem;
+    }
+
+    .name {
+        font-size: clamp(4.5rem, 4vw, 5rem);
+    }
+
+    .title {
+        font-size: clamp(1.6rem, 1.8vw, 1.8rem);
+        max-width: 900px;
+    }
+
+    .social-links {
+        gap: 3rem;
+    }
+
+    .social-link {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.2rem;
+    }
+
+    .icon {
+        width: 26px;
+        height: 26px;
+    }
+
+    /* Ultra-wide screen optimizations */
+    .professional-summary {
+        margin-top: var(--space-lg);
+    }
+
+    .summary-text {
+        font-size: 1.1rem;
+    }
+
+    /* Enhanced background animations for large screens */
+    .gradient-mesh {
+        background-size: 140% 140%;
+        animation-duration: 30s;
+    }
+
+    .floating-dots::before,
+    .floating-dots::after {
+        width: 6px;
+        height: 6px;
+    }
+}
+
+/* ===== ULTRA-WIDE DISPLAYS (1920px+) ===== */
+
+@media (min-width: 1920px) {
+    .name {
+        font-size: clamp(5rem, 3.5vw, 6rem);
+    }
+
+    .title {
+        font-size: clamp(1.8rem, 1.5vw, 2rem);
+        max-width: 1000px;
+    }
+
+    .hero-content {
+        gap: 5rem;
+    }
+
+    .social-link {
+        font-size: 1.3rem;
+        padding: 1.5rem 3rem;
+    }
+
+    /* Add subtle parallax effect for ultra-wide */
+    .background-animation {
+        transform: translateZ(0);
+        /* Enable hardware acceleration */
+    }
+
+    .experience-timeline {
+        max-width: 1000px;
+    }
+
+    .projects-grid {
+        max-width: 1400px;
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    }
+}
+
+/* ===== ORIENTATION-SPECIFIC STYLES ===== */
+
+/* Landscape mobile devices */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: var(--space-sm) var(--space-md);
+    }
+
+    .hero-content {
+        gap: var(--space-sm);
+    }
+
+    .name {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .title {
+        font-size: clamp(0.9rem, 3vw, 1.2rem);
+    }
+
+    .social-links {
+        gap: var(--space-xs);
+    }
+
+    .social-link {
+        padding: var(--space-xs) var(--space-md);
+        font-size: 0.9rem;
+    }
+
+    .professional-summary {
+        display: none;
+        /* Hide on short landscape screens */
+    }
+
+    /* Reduce background animation intensity */
+    .gradient-mesh,
+    .tech-pattern {
+        opacity: 0.3;
+    }
+}
+
+/* ===== HIGH-DPI DISPLAYS ===== */
+
+@media (-webkit-min-device-pixel-ratio: 2),
+(min-resolution: 192dpi) {
+
+    /* Enhance text rendering on high-DPI displays */
+    body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    .name {
+        text-rendering: optimizeLegibility;
+    }
+
+    /* Sharper icon rendering */
+    .icon {
+        shape-rendering: geometricPrecision;
+    }
+}
+
+/* ===== REDUCED MOTION ADAPTATIONS ===== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    /* Override animations for motion-sensitive users */
+    .gradient-mesh {
+        animation: none;
+        background-size: 100% 100%;
+    }
+
+    .tech-pattern {
+        animation: none;
+    }
+
+    .floating-dots::before,
+    .floating-dots::after {
+        animation: none;
+        opacity: 0.2;
+    }
+
+    .social-link:hover {
+        transform: none;
+    }
+
+    .hero-content,
+    .name,
+    .title,
+    .social-links,
+    .professional-summary {
+        animation: none;
+    }
+
+    .experience-item,
+    .project-item {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+
+    .section-header {
+        animation: none;
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ===== CONTRAST PREFERENCE ADAPTATIONS ===== */
+
+@media (prefers-contrast: high) {
+    .name {
+        background: var(--text-primary);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        text-shadow: none;
+    }
+
+    .social-link {
+        border-width: 2px;
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .social-link:hover,
+    .social-link:focus {
+        background: rgba(255, 255, 255, 0.1);
+        border-width: 2px;
+    }
+
+    .experience-item,
+    .project-item {
+        border-width: 2px;
+    }
+}
+
+/* ===== PRINT OPTIMIZATIONS ===== */
+
+@media print {
+    .hero {
+        min-height: auto;
+        padding: 2cm;
+    }
+
+    .hero-content {
+        gap: 1cm;
+    }
+
+    .name {
+        font-size: 2rem;
+        color: black !important;
+        background: none !important;
+        -webkit-text-fill-color: black !important;
+        text-shadow: none !important;
+    }
+
+    .title {
+        font-size: 1.2rem;
+        color: #333 !important;
+    }
+
+    .social-links {
+        flex-direction: column;
+        gap: 0.5cm;
+    }
+
+    .social-link {
+        background: none !important;
+        border: 1px solid black !important;
+        color: black !important;
+        padding: 0.5cm;
+        page-break-inside: avoid;
+    }
+
+    .social-link::after {
+        content: " (" attr(href) ")";
+        font-size: 0.8rem;
+        color: #666;
+    }
+
+    .summary-text {
+        color: #666 !important;
+        font-size: 0.9rem;
+    }
+
+    /* Experience & Projects Print Styles */
+    .experience-section,
+    .projects-section {
+        padding: 1cm 0;
+        break-inside: avoid;
+    }
+
+    .section-title {
+        font-size: 1.5rem;
+        color: black !important;
+        margin-bottom: 0.5cm;
+    }
+
+    .section-subtitle {
+        color: #666 !important;
+        font-size: 1rem;
+    }
+
+    .experience-item,
+    .project-item {
+        break-inside: avoid;
+        margin-bottom: 1cm;
+        padding: 0.5cm;
+    }
+
+    .experience-content {
+        grid-template-columns: 1fr;
+        gap: 0.5cm;
+    }
+
+    .company-logo {
+        display: none;
+    }
+
+    .project-image {
+        display: none;
+    }
+
+    .tech-tag {
+        background: none !important;
+        border: 1px solid #ccc !important;
+        color: #666 !important;
+    }
+}

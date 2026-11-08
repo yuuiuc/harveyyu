@@ -1,0 +1,230 @@
+/* =====================================================
+   CSS Variables & Design System
+   Harvey Yu Personal Website
+   ===================================================== */
+
+:root {
+  /* ===== COLOR PALETTE ===== */
+  
+  /* Primary Background Colors */
+  --bg-primary: #0B1426;        /* Deep Navy */
+  --bg-secondary: #1E293B;      /* Slate Blue */
+  --bg-glass: rgba(255, 255, 255, 0.1);  /* Glass morphism base */
+  
+  /* Tech-Oriented Brand Colors */
+  --tech-blue: #1E40AF;         /* Primary Tech Blue */
+  --tech-cyan: #06B6D4;         /* Accent Cyan */
+  --tech-purple: #8B5CF6;       /* Secondary Purple */
+  --tech-indigo: #3B82F6;       /* Supporting Indigo */
+  
+  /* Text Colors */
+  --text-primary: #FFFFFF;      /* Pure White */
+  --text-secondary: #F1F5F9;    /* Light Gray */
+  --text-accent: #06B6D4;       /* Cyan for links */
+  --text-muted: #94A3B8;        /* Muted gray for subtitles */
+  
+  /* Gradient Definitions */
+  --gradient-primary: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%);
+  --gradient-text: linear-gradient(135deg, #06B6D4 0%, #8B5CF6 100%);
+  --gradient-mesh: 
+    radial-gradient(ellipse 800px 600px at 20% 10%, rgba(30, 64, 175, 0.4), transparent),
+    radial-gradient(ellipse 600px 800px at 80% 90%, rgba(139, 92, 246, 0.3), transparent),
+    radial-gradient(ellipse 400px 400px at 50% 50%, rgba(6, 182, 212, 0.2), transparent);
+  
+  /* ===== TYPOGRAPHY ===== */
+  
+  /* Font Family */
+  --font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  
+  /* Fluid Typography Scale */
+  --font-display: clamp(2.5rem, 8vw, 4.5rem);     /* Name - responsive */
+  --font-title: clamp(1.2rem, 4vw, 1.6rem);       /* Subtitle - responsive */
+  --font-body: clamp(0.9rem, 2vw, 1rem);          /* Body text */
+  --font-caption: clamp(0.8rem, 1.5vw, 0.9rem);   /* Small text */
+  
+  /* Font Weights */
+  --weight-light: 300;
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  
+  /* Line Heights */
+  --line-height-tight: 1.1;
+  --line-height-normal: 1.5;
+  --line-height-loose: 1.7;
+  
+  /* Letter Spacing */
+  --letter-spacing-tight: -0.02em;
+  --letter-spacing-normal: 0;
+  --letter-spacing-wide: 0.025em;
+  
+  /* ===== SPACING SYSTEM ===== */
+  
+  --space-xs: 0.5rem;    /* 8px */
+  --space-sm: 1rem;      /* 16px */
+  --space-md: 1.5rem;    /* 24px */
+  --space-lg: 2rem;      /* 32px */
+  --space-xl: 3rem;      /* 48px */
+  --space-2xl: 4rem;     /* 64px */
+  --space-3xl: 6rem;     /* 96px */
+  
+  /* Container Spacing */
+  --container-padding: clamp(1rem, 4vw, 2rem);
+  --content-gap: clamp(1.5rem, 4vw, 2.5rem);
+  
+  /* ===== LAYOUT & SIZING ===== */
+  
+  /* Container Constraints */
+  --container-max-width: 1200px;
+  --content-max-width: 800px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+  
+  /* Icon Sizes */
+  --icon-sm: 20px;
+  --icon-md: 24px;
+  --icon-lg: 32px;
+  
+  /* ===== SHADOWS & EFFECTS ===== */
+  
+  /* Elevation Shadows */
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+  --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
+  
+  /* Glow Effects */
+  --glow-cyan: 0 0 20px rgba(6, 182, 212, 0.4);
+  --glow-blue: 0 0 20px rgba(30, 64, 175, 0.4);
+  --glow-purple: 0 0 20px rgba(139, 92, 246, 0.4);
+  --glow-text: 0 0 30px rgba(59, 130, 246, 0.5);
+  
+  /* Glass Morphism Effects */
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-blur: blur(12px);
+  --glass-hover-bg: rgba(6, 182, 212, 0.15);
+  
+  /* ===== ANIMATIONS & TRANSITIONS ===== */
+  
+  /* Easing Functions */
+  --ease-smooth: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-elastic: cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  
+  /* Transition Durations */
+  --duration-fast: 150ms;
+  --duration-normal: 300ms;
+  --duration-slow: 500ms;
+  
+  /* Standard Transitions */
+  --transition-smooth: all var(--duration-normal) var(--ease-smooth);
+  --transition-bounce: all var(--duration-normal) var(--ease-bounce);
+  --transition-elastic: all var(--duration-slow) var(--ease-elastic);
+  
+  /* ===== BREAKPOINTS (for reference in media queries) ===== */
+  
+  --breakpoint-mobile: 320px;
+  --breakpoint-tablet: 768px;
+  --breakpoint-desktop: 1024px;
+  --breakpoint-wide: 1440px;
+  
+  /* ===== Z-INDEX SCALE ===== */
+  
+  --z-background: -1;
+  --z-base: 0;
+  --z-content: 1;
+  --z-overlay: 10;
+  --z-modal: 100;
+  --z-tooltip: 1000;
+}
+
+/* ===== THEME VARIATIONS ===== */
+
+/* Respect user's color scheme preference */
+@media (prefers-color-scheme: dark) {
+  :root {
+    /* Dark theme is default, but can be enhanced here */
+    --bg-primary: #0B1426;
+    --text-primary: #FFFFFF;
+  }
+}
+
+/* Light theme override (if needed in future) */
+[data-theme="light"] {
+  --bg-primary: #F8FAFC;
+  --bg-secondary: #E2E8F0;
+  --text-primary: #1E293B;
+  --text-secondary: #475569;
+}
+
+/* ===== ACCESSIBILITY & REDUCED MOTION ===== */
+
+/* Respect user's motion preference */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    /* Disable animations for users who prefer reduced motion */
+    --duration-fast: 0ms;
+    --duration-normal: 0ms;
+    --duration-slow: 0ms;
+    --transition-smooth: none;
+    --transition-bounce: none;
+    --transition-elastic: none;
+  }
+  
+  /* Reset all animations and transitions */
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  :root {
+    --text-primary: #FFFFFF;
+    --text-secondary: #FFFFFF;
+    --glass-border: rgba(255, 255, 255, 0.5);
+  }
+}
+
+/* ===== UTILITY CLASSES FOR COMMON PATTERNS ===== */
+
+/* Gradient text utility */
+.gradient-text {
+  background: var(--gradient-text);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Glass morphism utility */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: var(--glass-blur);
+  border: 1px solid var(--glass-border);
+}
+
+/* Glow effect utilities */
+.glow-cyan { box-shadow: var(--glow-cyan); }
+.glow-blue { box-shadow: var(--glow-blue); }
+.glow-purple { box-shadow: var(--glow-purple); }
+
+/* Screen reader only utility */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

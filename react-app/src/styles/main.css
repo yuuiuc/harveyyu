@@ -1,0 +1,439 @@
+/* =====================================================
+   Harvey Yu Portfolio - Global Styles
+   React + Bootstrap + FontAwesome
+   ===================================================== */
+
+/* ===== EDUCATION SECTION ===== */
+.education-section {
+    background: #f8f9fa;
+}
+
+.edu-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.edu-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.edu-logo {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, #13294b 0%, #4dd0e1 100%);
+}
+
+.edu-school {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+}
+
+.edu-degree {
+    font-size: 1rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.edu-dates {
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+.edu-detail {
+    color: #555;
+    line-height: 1.6;
+}
+
+:root {
+    --accent: #f5a623;
+    /* warm bridge-gold accent */
+    --dark: #1c1c1e;
+    --muted: #6c757d;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Offset anchor targets so they aren't hidden behind the fixed navbar */
+section[id],
+header[id] {
+    scroll-margin-top: 90px;
+}
+
+/* ===== PILL NAVBAR (fixed, clickable section links) ===== */
+
+.pill-nav {
+    position: fixed;
+    top: 1rem;
+    right: 1.5rem;
+    z-index: 1000;
+}
+
+.pill-nav-list {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.pill-nav-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+    padding: 0.45rem 0.9rem;
+    border-radius: 999px;
+    color: rgba(255, 255, 255, 0.65);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.85rem;
+    background: rgba(40, 40, 44, 0.3);
+    backdrop-filter: blur(8px);
+    border: 1px solid transparent;
+    transition: background 0.25s ease, border-color 0.25s ease, color 0.25s ease;
+    white-space: nowrap;
+}
+
+.pill-nav-link:hover {
+    background: rgba(40, 40, 44, 0.45);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.pill-nav-link.active {
+    background: rgba(40, 40, 44, 0.5);
+    border-color: rgba(255, 255, 255, 0.4);
+    color: rgba(255, 255, 255, 0.95);
+}
+
+.pill-nav-icon {
+    font-size: 0.85rem;
+}
+
+/* On small screens, show only icons to save space */
+@media (max-width: 576px) {
+    .pill-nav-list {
+        gap: 0.4rem;
+    }
+
+    .pill-nav-link {
+        padding: 0.55rem 0.75rem;
+    }
+
+    .pill-nav-label {
+        display: none;
+    }
+}
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    color: var(--dark);
+}
+
+/* ===== HERO with San Francisco Golden Gate Bridge ===== */
+
+.hero {
+    position: relative;
+    min-height: 100vh;
+    /* Golden Gate Bridge, San Francisco (Unsplash - free to use) */
+    background-image: url('https://images.unsplash.com/photo-1501594907352-04cda38ebc29?auto=format&fit=crop&w=1920&q=80');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom,
+            rgba(0, 0, 0, 0.35),
+            rgba(0, 0, 0, 0.55));
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+}
+
+.hero-name {
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    font-weight: 300;
+    letter-spacing: 0.02em;
+    text-shadow: 0 2px 20px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0.5rem;
+}
+
+.hero-title {
+    font-size: clamp(1rem, 3vw, 1.6rem);
+    font-weight: 300;
+    font-style: italic;
+    text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+    margin-bottom: 0;
+}
+
+.hero-summary {
+    font-size: 0.95rem;
+    opacity: 0.9;
+    text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+}
+
+.hero-icon-link {
+    color: #fff;
+    font-size: 2rem;
+    transition: transform 0.25s ease, color 0.25s ease;
+    display: inline-block;
+}
+
+.hero-icon-link:hover {
+    color: var(--accent);
+    transform: translateY(-4px) scale(1.1);
+}
+
+.hero-scroll {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 1.5rem;
+    z-index: 2;
+    opacity: 0.85;
+    animation: bounce 2s infinite;
+    text-decoration: none;
+}
+
+@keyframes bounce {
+
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+        transform: translate(-50%, 0);
+    }
+
+    40% {
+        transform: translate(-50%, -12px);
+    }
+
+    60% {
+        transform: translate(-50%, -6px);
+    }
+}
+
+/* ===== SECTIONS ===== */
+
+.section {
+    padding: 5rem 0;
+}
+
+.experience-section {
+    background: #f8f9fa;
+}
+
+.projects-section {
+    background: #fff;
+}
+
+.section-header {
+    margin-bottom: 3rem;
+}
+
+.section-title {
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 300;
+}
+
+.section-subtitle {
+    color: var(--muted);
+    font-style: italic;
+    font-size: 1.1rem;
+}
+
+/* ===== EXPERIENCE CARDS ===== */
+
+.exp-card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.exp-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.exp-logo {
+    width: 64px;
+    height: 64px;
+    min-width: 64px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1.8rem;
+}
+
+.exp-company {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+}
+
+.exp-role {
+    font-size: 1.05rem;
+    color: var(--accent);
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+.exp-meta {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.exp-dates {
+    font-style: italic;
+}
+
+.exp-points {
+    list-style: none;
+    padding-left: 0;
+}
+
+.exp-points li {
+    position: relative;
+    padding-left: 1.25rem;
+    margin-bottom: 0.6rem;
+    color: #444;
+    line-height: 1.6;
+}
+
+.exp-points li::before {
+    content: '\25B8';
+    /* ▸ */
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* ===== PROJECT CARDS ===== */
+
+.project-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 12px 34px rgba(0, 0, 0, 0.14);
+}
+
+.project-image {
+    height: 160px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.project-icon {
+    font-size: 3.5rem;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.project-title {
+    font-size: 1.3rem;
+    font-weight: 600;
+    margin-bottom: 0.1rem;
+}
+
+.project-category {
+    color: var(--accent);
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.project-desc {
+    color: #555;
+    line-height: 1.6;
+}
+
+.project-highlights {
+    list-style: none;
+    padding-left: 0;
+    font-size: 0.9rem;
+}
+
+.project-highlights li {
+    position: relative;
+    padding-left: 1.1rem;
+    margin-bottom: 0.4rem;
+    color: #555;
+}
+
+.project-highlights li::before {
+    content: '\2022';
+    /* • */
+    position: absolute;
+    left: 0;
+    color: var(--accent);
+}
+
+.tech-badge {
+    background-color: #eef1f5 !important;
+    color: #4a5568 !important;
+    font-weight: 500;
+    padding: 0.4rem 0.7rem;
+    border-radius: 6px;
+}
+
+/* ===== FOOTER ===== */
+
+.site-footer {
+    background: var(--dark);
+    padding: 2.5rem 0;
+}
+
+.footer-icon-link {
+    color: #fff;
+    font-size: 1.5rem;
+    transition: color 0.25s ease;
+}
+
+.footer-icon-link:hover {
+    color: var(--accent);
+}
+
+.footer-text {
+    color: #adb5bd;
+    font-size: 0.85rem;
+}
+
+/* Disable fixed background on mobile for performance */
+@media (max-width: 768px) {
+    .hero {
+        background-attachment: scroll;
+    }
+}
